@@ -1,4 +1,14 @@
 /**app.wxss**/
+.container{
+  padding: 20rpx;
+  /* 全局样式设置 */
+}
+
+
+
+
+
+
 .container {
   display: flex;
   flex-direction: column;

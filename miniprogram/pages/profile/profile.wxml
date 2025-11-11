@@ -1,0 +1,6 @@
+<!-- 个人中心页 -->
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <text>个人中心页</text>
+  <!-- 后续头像、昵称、我的发布、我的收藏等 -->
+</view>
