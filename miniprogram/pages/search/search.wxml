@@ -1,0 +1,7 @@
+<!-- 搜索页 -->
+<!--pages/search/search.wxml-->
+<view class="container">
+  <text>搜索页</text>
+  <input placeholder="输入关键词搜索商品" />
+  <text>搜索列表占位</text>
+</view>

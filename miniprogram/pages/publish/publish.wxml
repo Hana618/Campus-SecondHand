@@ -1,0 +1,6 @@
+<!-- 发布商品页 -->
+<!--pages/publish/publish.wxml-->
+<view class="container">
+  <text>发布商品页</text>
+  <!-- 后续放图片上传、表单等 -->
+</view>

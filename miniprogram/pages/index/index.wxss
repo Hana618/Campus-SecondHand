@@ -1,0 +1,10 @@
+/**index.wxss**/
+.container{
+  padding: 40rpx;
+  text-align: center;
+  color: #888;
+}
+
+
+
+ 

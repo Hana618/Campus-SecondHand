@@ -1,0 +1,7 @@
+<!-- 首页（展示商品列表） -->
+<!--pages/index/index.wxml-->
+<view class="container">
+  <text>首页 - 商品列表（占位）</text>
+  <!-- 后续商品卡片列表插这里 -->
+</view>
+

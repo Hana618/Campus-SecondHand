@@ -1,0 +1,6 @@
+<!-- 商品详情页 -->
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <text>商品详情页</text>
+  <!-- 后续放轮播图、价格、描述、发布者信息等 -->
+</view>
