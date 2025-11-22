@@ -1,6 +1,26 @@
 <!-- 个人中心页 -->
 <!--pages/profile/profile.wxml-->
+<!-- 个人中心页 -->
 <view class="container">
-  <text>个人中心页</text>
-  <!-- 后续头像、昵称、我的发布、我的收藏等 -->
+  <text class="page-title">个人中心页</text>
+  
+  <!-- 功能入口列表 -->
+  <view class="function-list">
+    <view class="function-item" bindtap="navigateToOrderCenter">
+      <text class="function-text">订单中心</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="function-item">
+      <text class="function-text">我的发布</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="function-item">
+      <text class="function-text">我的收藏</text>
+      <text class="arrow">></text>
+    </view>
+    <view class="function-item">
+      <text class="function-text">我的消息</text>
+      <text class="arrow">></text>
+    </view>
+  </view>
 </view>

@@ -1,7 +1,34 @@
 <!-- 首页（展示商品列表） -->
 <!--pages/index/index.wxml-->
 <view class="container">
-  <text>首页 - 商品列表（占位）</text>
-  <!-- 后续商品卡片列表插这里 -->
+  <view class="header">
+    <text class="title">首页 - 商品列表</text>
+  </view>
+  
+  <!-- 快速入口 -->
+  <view class="quick-entry">
+    <view class="entry-item" bindtap="goToOrderCenter">
+      <text class="entry-text">订单中心</text>
+    </view>
+  </view>
+  
+  <!-- 商品卡片列表 -->
+  <view class="product-list">
+    <view class="product-card" bindtap="goToProductDetail">
+      <view class="product-info">
+        <text class="product-title">二手教材 - 高等数学</text>
+        <text class="product-price">¥45.00</text>
+      </view>
+      <text class="buy-btn">购买</text>
+    </view>
+    
+    <view class="product-card" bindtap="goToProductDetail">
+      <view class="product-info">
+        <text class="product-title">蓝牙耳机 - 几乎全新</text>
+        <text class="product-price">¥89.00</text>
+      </view>
+      <text class="buy-btn">购买</text>
+    </view>
+  </view>
 </view>
 

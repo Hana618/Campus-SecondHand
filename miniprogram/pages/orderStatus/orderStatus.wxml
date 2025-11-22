@@ -1,0 +1,53 @@
+<!-- 订单状态分类页面 -->
+<view class="container">
+  <view class="header">
+    <text class="title">{{pageTitle}}</text>
+  </view>
+  
+  <!-- 订单列表 -->
+  <view class="order-list">
+    <!-- 订单项1 -->
+    <view class="order-item" bindtap="goToOrderDetail" data-order-id="1">
+      <view class="order-header">
+        <text class="shop-name">卖家店铺</text>
+        <text class="order-status">{{statusText}}</text>
+      </view>
+      
+      <view class="order-content">
+        <view class="order-info">
+          <text class="order-title">二手教科书 - 高等数学</text>
+          <text class="order-price">¥30.00</text>
+        </view>
+      </view>
+      
+      <view class="order-footer">
+        <text class="order-time">2024-01-01 10:30:00</text>
+        <button class="action-btn" bindtap="handleOrderAction" data-order-id="1">
+          {{actionButtonText}}
+        </button>
+      </view>
+    </view>
+    
+    <!-- 订单项2 -->
+    <view class="order-item" bindtap="goToOrderDetail" data-order-id="2">
+      <view class="order-header">
+        <text class="shop-name">校园小店</text>
+        <text class="order-status">{{statusText}}</text>
+      </view>
+      
+      <view class="order-content">
+        <view class="order-info">
+          <text class="order-title">耳机 - 蓝牙耳机</text>
+          <text class="order-price">¥50.00</text>
+        </view>
+      </view>
+      
+      <view class="order-footer">
+        <text class="order-time">2024-01-02 14:15:00</text>
+        <button class="action-btn" bindtap="handleOrderAction" data-order-id="2">
+          {{actionButtonText}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,8 +1,78 @@
-/**index.wxss**/
-.container{
-  padding: 40rpx;
+/* 首页样式 */
+.container {
+  background-color: #f5f5f5;
+  padding-bottom: 20rpx;
+}
+
+.header {
+  padding: 30rpx;
+  background-color: #fff;
   text-align: center;
-  color: #888;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.quick-entry {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.entry-item {
+  background-color: #07c160;
+  color: #fff;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 8rpx;
+}
+
+.entry-text {
+  font-size: 28rpx;
+}
+
+.product-list {
+  padding: 20rpx 30rpx;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 28rpx;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.product-price {
+  font-size: 32rpx;
+  color: #ff4757;
+  font-weight: bold;
+}
+
+.buy-btn {
+  background-color: #07c160;
+  color: #fff;
+  padding: 10rpx 30rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
 }
 
 

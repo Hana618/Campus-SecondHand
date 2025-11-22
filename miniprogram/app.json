@@ -4,7 +4,10 @@
     "pages/search/search",
     "pages/detail/detail",
     "pages/publish/publish",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/orderCenter/orderCenter",
+    "pages/orderDetail/orderDetail",
+    "pages/orderStatus/orderStatus"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,19 +23,19 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-active.png"
+        "selectedIconPath": "images/home.png"
       },
       {
         "pagePath": "pages/publish/publish",
         "text": "发布",
-        "iconPath": "images/publish.png",
-        "selectedIconPath": "images/publish-active.png"
+        "iconPath": "images/post.png",
+        "selectedIconPath": "images/post.png"
       },
       {
         "pagePath": "pages/profile/profile",
         "text": "我的",
-        "iconPath": "images/profile.png",
-        "selectedIconPath": "images/profile-active.png"
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my.png"
       }
     ]
   },

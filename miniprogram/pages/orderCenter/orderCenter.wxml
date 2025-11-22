@@ -1,0 +1,34 @@
+<!-- 订单中心页面 -->
+<view class="container">
+  <view class="header">
+    <text class="title">订单中心</text>
+  </view>
+  
+  <!-- 订单状态切换标签 -->
+  <view class="order-tabs">
+    <view class="tab-item {{activeTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">全部</view>
+    <view class="tab-item {{activeTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">待付款</view>
+    <view class="tab-item {{activeTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">待发货</view>
+    <view class="tab-item {{activeTab === 3 ? 'active' : ''}}" bindtap="switchTab" data-index="3">待收货</view>
+  </view>
+  
+  <!-- 订单列表 -->
+  <view class="order-list">
+    <view class="order-item" bindtap="goToOrderDetail" data-order-id="1">
+      <view class="order-header">
+        <text class="shop-name">商品卖家</text>
+        <text class="order-status">{{getStatusText(activeTab)}}</text>
+      </view>
+      <view class="order-content">
+        <view class="order-info">
+          <text class="order-title">订单商品示例</text>
+          <text class="order-price">¥99.00</text>
+        </view>
+      </view>
+      <view class="order-footer">
+        <text class="order-time">2024-01-01 12:00:00</text>
+        <button class="action-btn" size="mini" bindtap="handleOrderAction">查看详情</button>
+      </view>
+    </view>
+  </view>
+</view>
