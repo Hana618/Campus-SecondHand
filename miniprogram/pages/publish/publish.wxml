@@ -1,6 +1,86 @@
 <!-- 发布商品页 -->
 <!--pages/publish/publish.wxml-->
 <view class="container">
-  <text>发布商品页</text>
-  <!-- 后续放图片上传、表单等 -->
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-left" bindtap="onBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <view class="nav-title">发布商品</view>
+    <view class="nav-right" bindtap="onPublish">
+      <text class="nav-btn">发布</text>
+    </view>
+  </view>
+  
+  <!-- 图片上传区域 -->
+  <view class="upload-section">
+    <view class="section-title">商品图片</view>
+    <view class="upload-container">
+      <view class="upload-item" wx:for="{{images}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill"></image>
+        <view class="delete-btn" bindtap="onDeleteImage" data-index="{{index}}">×</view>
+      </view>
+      <view class="upload-item upload-btn" bindtap="onUploadImage">
+        <text class="upload-icon">+</text>
+        <text class="upload-text">添加图片</text>
+      </view>
+    </view>
+    <text class="upload-tip">最多可上传9张图片</text>
+  </view>
+  
+  <!-- 商品信息表单 -->
+  <form bindsubmit="onSubmit">
+    <!-- 商品标题 -->
+    <view class="form-section">
+      <view class="section-title">商品标题</view>
+      <input class="form-input" name="title" placeholder="请输入商品标题" placeholder-class="placeholder" maxlength="50"></input>
+    </view>
+    
+    <!-- 商品分类 -->
+    <view class="form-section">
+      <view class="section-title">商品分类</view>
+      <picker class="form-picker" bindchange="onCategoryChange" value="{{categoryIndex}}" range="{{categories}}">
+        <view class="picker-text">{{categories[categoryIndex]}}</view>
+        <view class="picker-arrow">▼</view>
+      </picker>
+    </view>
+    
+    <!-- 商品价格 -->
+    <view class="form-section">
+      <view class="section-title">商品价格</view>
+      <view class="price-input-container">
+        <text class="price-symbol">¥</text>
+        <input class="price-input" name="price" type="digit" placeholder="0.00" placeholder-class="placeholder"></input>
+        <text class="price-unit">元</text>
+      </view>
+    </view>
+    
+    <!-- 商品成色 -->
+    <view class="form-section">
+      <view class="section-title">商品成色</view>
+      <view class="condition-container">
+        <view class="condition-item" wx:for="{{conditions}}" wx:key="index" bindtap="onConditionChange" data-index="{{index}}" 
+              class="{{conditionIndex === index ? 'active' : ''}}">
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 商品描述 -->
+    <view class="form-section">
+      <view class="section-title">商品描述</view>
+      <textarea class="form-textarea" name="description" placeholder="请详细描述商品的成色、使用情况、交易方式等信息" 
+                placeholder-class="placeholder" maxlength="500" auto-height="{{true}}"></textarea>
+      <view class="textarea-count">{{descriptionLength}}/500</view>
+    </view>
+    
+    <!-- 所在校区 -->
+    <view class="form-section">
+      <view class="section-title">所在校区</view>
+      <picker class="form-picker" bindchange="onCampusChange" value="{{campusIndex}}" range="{{campuses}}">
+        <view class="picker-text">{{campuses[campusIndex]}}</view>
+        <view class="picker-arrow">▼</view>
+      </picker>
+    </view>
+  </form>
 </view>
