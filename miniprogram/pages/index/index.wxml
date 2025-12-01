@@ -1,0 +1,95 @@
+<!-- 首页（展示商品列表） -->
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input" bindtap="goToSearch">
+      <text class="search-icon">🔍</text>
+      <text class="search-placeholder">搜索商品</text>
+    </view>
+  </view>
+  
+  <!-- 分类导航 -->
+  <view class="category-nav">
+    <view class="category-item">
+      <view class="category-icon">📚</view>
+      <text class="category-name">教材</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">💻</view>
+      <text class="category-name">数码</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">👔</view>
+      <text class="category-name">服饰</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">🏃</view>
+      <text class="category-name">运动</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">📱</view>
+      <text class="category-name">配件</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">🎮</view>
+      <text class="category-name">游戏</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">🏠</view>
+      <text class="category-name">家居</text>
+    </view>
+    <view class="category-item">
+      <view class="category-icon">📦</view>
+      <text class="category-name">其他</text>
+    </view>
+  </view>
+  
+  <!-- 推荐商品标题 -->
+  <view class="section-title">
+    <text class="title-text">推荐商品</text>
+    <text class="more-text">更多</text>
+  </view>
+  
+  <!-- 初始加载动画 -->
+  <view wx:if="{{isLoading && products.length === 0}}" class="loading-container">
+    <view class="loading"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 商品卡片列表 -->
+  <view wx:elif="{{products.length > 0}}" class="product-list">
+    <view class="product-card" wx:for="{{products}}" wx:key="id" bindtap="goToProductDetail">
+      <view class="product-image">
+        <image src="{{item.image}}" mode="aspectFill"></image>
+      </view>
+      <view class="product-info">
+        <text class="product-title">{{item.title}}</text>
+        <text class="product-desc">{{item.desc}}</text>
+        <view class="product-meta">
+          <text class="product-price">¥{{item.price}}</text>
+          <text class="product-publisher">@{{item.publisher}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 加载更多 -->
+    <view wx:if="{{isLoading}}" class="load-more">
+      <view class="loading"></view>
+      <text class="loading-text">加载更多...</text>
+    </view>
+    
+    <!-- 没有更多数据 -->
+    <view wx:elif="{{!hasMore}}" class="no-more">
+      <text class="no-more-text">没有更多商品了</text>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view wx:else class="empty-container">
+    <text class="empty-icon">📦</text>
+    <text class="empty-text">暂无商品</text>
+    <text class="empty-tip">下拉刷新试试</text>
+  </view>
+</view>
+
