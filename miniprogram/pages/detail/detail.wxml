@@ -43,7 +43,7 @@
       <text class="detail-text">商品描述：二手高等数学教材，九成新，无笔记，适合大一新生使用。</text>
       <text class="detail-text">商品成色：九成新</text>
       <text class="detail-text">所在校区：主校区</text>
-      <text class="detail-text">交易方式：支持面交和快递</text>
+      <text class="detail-text">交易方式：支持自取和指定地点</text>
     </view>
   </view>
   
@@ -58,7 +58,7 @@
         <text class="publisher-name">小明同学</text>
         <text class="publisher-stats">发布商品 28 | 已售 15</text>
       </view>
-      <button class="contact-btn" type="primary" size="mini">联系卖家</button>
+      <!-- <button class="contact-btn" type="primary" size="mini">联系卖家</button> -->
     </view>
   </view>
   
@@ -67,6 +67,11 @@
     <view class="bar-left">
       <view class="bar-item" bindtap="onCollect">
         <text class="bar-icon">❤️</text>
+        <!-- 收藏前和收藏后图标变化 -->
+        <!-- <view class="collect-button" bindtap="toggleCollect">
+          <image src="{{isCollected ? '/images/collected.png' : '/images/collect.png'}}" />
+        </view> -->
+        
         <text class="bar-text">收藏</text>
       </view>
       <view class="bar-item" bindtap="onShare">
