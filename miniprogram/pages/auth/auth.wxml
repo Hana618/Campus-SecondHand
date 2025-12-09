@@ -1,0 +1,26 @@
+<!-- 认证页 -->
+<view class="container">
+  <view class="title">
+    <text class="main-title">用户认证</text>
+    <text class="sub-title">请填写真实的学生信息，以便使用完整功能</text>
+  </view>
+  
+  <view class="auth-form">
+    <view class="input-group">
+      <text class="label">姓名</text>
+      <input type="text" placeholder="请输入真实姓名" class="input" bindinput="onNameInput" />
+    </view>
+    
+    <view class="input-group">
+      <text class="label">班级</text>
+      <input type="text" placeholder="请输入班级（如：计科25-1）" class="input" bindinput="onClassInput" />
+    </view>
+    
+    <view class="input-group">
+      <text class="label">学号</text>
+      <input type="text" placeholder="请输入学号" class="input" bindinput="onStudentIdInput" />
+    </view>
+    
+    <button class="submit-btn" bindtap="submitAuth">完成认证</button>
+  </view>
+</view>

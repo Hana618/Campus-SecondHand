@@ -107,12 +107,24 @@ Page({
     });
   },
 
-  // 我的消息
+  /**
+   * 我的消息
+   */
   onMyMessage: function() {
-    wx.showToast({
-      title: '我的消息功能开发中',
-      icon: 'none',
-      duration: 2000
+    const that = this;
+    
+    // 显示消息列表模态框
+    wx.showModal({
+      title: '我的消息',
+      content: '您有' + that.data.newMessageCount + '条新消息',
+      success: function(res) {
+        if (res.confirm) {
+          // 跳转到消息列表页
+          wx.navigateTo({
+            url: '/pages/profile/messages'
+          });
+        }
+      }
     });
   },
 

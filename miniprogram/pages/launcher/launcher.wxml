@@ -1,0 +1,14 @@
+<!--启动页-->
+<view class="container">
+  <view class="header">
+    <text>欢迎来到校园二手市场！</text>
+  </view>
+  <view class="content">
+    <image src="/miniprogram/images/replace.jpg" class="replaceimg"></image>
+    <text class="version">版本1.0</text>
+  </view>
+  <view class="footer">
+    <view><text>校内二手交易新平台</text></view>
+    <view><text>二手字典</text></view>
+  </view>
+</view>

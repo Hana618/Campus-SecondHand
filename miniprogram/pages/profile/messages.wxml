@@ -1,0 +1,36 @@
+<!-- 消息列表页面 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-left" bindtap="onBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <view class="nav-title">我的消息</view>
+    <view class="nav-right" bindtap="onClearAll">
+      <text class="nav-btn">清空</text>
+    </view>
+  </view>
+  
+  <!-- 消息列表 -->
+  <scroll-view scroll-y="true" class="message-list">
+    <view class="message-item" wx:for="{{messages}}" wx:key="id" bindtap="onMessageTap" data-id="{{item.id}}" data-goods-id="{{item.id}}">
+      <view class="message-avatar">
+        <image src="/images/others/avatar.png" mode="aspectFill"></image>
+        <view class="unread-badge" wx:if="{{!item.isRead}}"></view>
+      </view>
+      <view class="message-content">
+        <view class="message-header">
+          <text class="message-goods-name">{{item.goodsName}}</text>
+          <text class="message-time">{{item.time}}</text>
+        </view>
+        <text class="message-text">{{item.content}}</text>
+      </view>
+    </view>
+    
+    <!-- 空消息提示 -->
+    <view class="empty-message" wx:if="{{messages.length === 0}}">
+      <text class="empty-icon">📭</text>
+      <text class="empty-text">暂无消息</text>
+    </view>
+  </scroll-view>
+</view>

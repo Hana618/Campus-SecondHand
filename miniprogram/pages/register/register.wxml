@@ -1,0 +1,43 @@
+<!-- 注册页 -->
+<view class="container">
+  <view class="logo">
+    <image src="/images/replace.jpg" class="logo-img"></image>
+    <text class="app-name">二手字典</text>
+    <text class="app-desc">校内二手交易新平台</text>
+  </view>
+  
+  <view class="register-form">
+    <!-- 手机号注册 -->
+    <view class="phone-register">
+      <view class="input-group">
+        <input type="number" placeholder="请输入手机号" class="input" bindinput="onPhoneInput" />
+      </view>
+      <view class="input-group verify-code">
+        <input type="number" placeholder="请输入验证码" class="input" bindinput="onCodeInput" />
+        <button class="get-code-btn" bindtap="getVerifyCode">{{codeBtnText}}</button>
+      </view>
+      <view class="input-group">
+        <input type="text" placeholder="请设置密码" class="input" password bindinput="onPasswordInput" />
+      </view>
+      <button class="register-btn" bindtap="phoneRegister">手机号注册</button>
+    </view>
+    
+    <view class="divider">
+      <text class="divider-text">或</text>
+    </view>
+    
+    <!-- 微信注册 -->
+    <view class="wechat-register">
+      <button class="wechat-btn" open-type="getUserInfo" bindgetuserinfo="wechatRegister">
+        <image src="/images/others/wechat.svg" class="wechat-icon"></image>
+        <text>微信注册</text>
+      </button>
+    </view>
+    
+    <!-- 登录入口 -->
+    <view class="login-link">
+      <text>已有账号？</text>
+      <navigator url="../login/login" class="login-btn">立即登录</navigator>
+    </view>
+  </view>
+</view>

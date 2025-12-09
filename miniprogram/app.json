@@ -1,13 +1,20 @@
 {
   "pages": [
+    "pages/launcher/launcher",
     "pages/index/index",
     "pages/search/search",
     "pages/detail/detail",
     "pages/publish/publish",
+    "pages/publish/publish-choose",
+    "pages/publish/publish-sell",
     "pages/profile/profile",
     "pages/orderCenter/orderCenter",
     "pages/orderDetail/orderDetail",
-    "pages/orderStatus/orderStatus"
+    "pages/orderStatus/orderStatus",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/auth/auth",
+    "pages/profile/messages"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +35,7 @@
         "selectedIconPath": "images/icons/home-active.png"
       },
       {
-        "pagePath": "pages/publish/publish",
+        "pagePath": "pages/publish/publish-choose",
         "text": "发布",
         "iconPath": "images/post.png",
         "selectedIconPath": "images/post-active.png"

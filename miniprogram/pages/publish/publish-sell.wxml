@@ -1,0 +1,89 @@
+<!-- 出物发布页面 -->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar">
+    <view class="nav-left" bindtap="onBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <view class="nav-title">我要出物</view>
+    <view class="nav-right" bindtap="onSubmit">
+      <text class="nav-btn">发布</text>
+    </view>
+  </view>
+  
+  <!-- 表单内容 -->
+  <scroll-view scroll-y="true" class="form-container">
+    <!-- 图片上传 -->
+    <view class="form-section">
+      <text class="section-label">商品图片</text>
+      <view class="upload-container">
+        <view class="upload-item" wx:for="{{images}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFill"></image>
+          <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</view>
+        </view>
+        <view class="upload-add" bindtap="chooseImage" wx:if="{{images.length < 9}}">
+          <text class="add-icon">+</text>
+          <text class="add-text">添加图片</text>
+        </view>
+      </view>
+      <text class="section-hint">最多上传9张图片，第一张为封面</text>
+    </view>
+    
+    <!-- 商品标题 -->
+    <view class="form-section">
+      <text class="section-label">商品标题</text>
+      <input class="input-field" placeholder="请输入商品标题" bindinput="onTitleInput" value="{{title}}" />
+    </view>
+    
+    <!-- 商品价格 -->
+    <view class="form-section">
+      <text class="section-label">商品价格</text>
+      <view class="price-container">
+        <text class="price-symbol">¥</text>
+        <input class="price-input" type="number" placeholder="0.00" bindinput="onPriceInput" value="{{price}}" />
+      </view>
+    </view>
+    
+    <!-- 商品描述 -->
+    <view class="form-section">
+      <text class="section-label">商品描述</text>
+      <textarea class="textarea-field" placeholder="请输入商品描述，包括成色、数量等信息" bindinput="onDescriptionInput" value="{{description}}" auto-height="true" maxlength="500"></textarea>
+      <text class="textarea-count">{{description.length}}/500</text>
+    </view>
+    
+    <!-- 校区选择 -->
+    <view class="form-section">
+      <text class="section-label">所在校区</text>
+      <view class="picker-container">
+        <picker mode="selector" range="{{campusList}}" value="{{campusIndex}}" bindchange="onCampusChange">
+          <view class="picker-item">{{campusList[campusIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+    
+    <!-- 交易地点 -->
+    <view class="form-section">
+      <text class="section-label">交易地点</text>
+      <view class="location-container">
+        <input class="location-input" placeholder="点击获取定位" bindinput="onLocationInput" value="{{location}}" />
+        <view class="location-btn" bindtap="getLocation">获取定位</view>
+      </view>
+      <text class="section-hint">点击"获取定位"自动获取当前位置，也可手动输入</text>
+    </view>
+    
+    <!-- 联系方式 -->
+    <view class="form-section">
+      <text class="section-label">联系方式</text>
+      <view class="contact-container">
+        <view class="contact-item" wx:for="{{contactOptions}}" wx:key="index">
+          <radio-group bindchange="onContactTypeChange" data-index="{{index}}">
+            <radio value="{{item.value}}" checked="{{contactType === item.value}}" />
+          </radio-group>
+          <text class="contact-label">{{item.label}}</text>
+          <input class="contact-input" placeholder="请输入{{item.label}}" bindinput="onContactInput" data-type="{{item.value}}" value="{{contactValue}}" />
+        </view>
+      </view>
+      <text class="section-hint">请选择一种联系方式，方便买家与您联系</text>
+    </view>
+  </scroll-view>
+</view>

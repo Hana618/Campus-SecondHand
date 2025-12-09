@@ -1,0 +1,23 @@
+<!-- 需求选择页面 -->
+<view class="container">
+  <view class="nav-bar">
+    <view class="nav-left" bindtap="onBack">
+      <text class="nav-icon">←</text>
+    </view>
+    <view class="nav-title">我要发布</view>
+    <view class="nav-right"></view>
+  </view>
+  
+  <view class="choose-container">
+    <view class="choose-item" bindtap="goToSell">
+      <view class="item-icon">📦</view>
+      <view class="item-text">我要出物</view>
+      <view class="item-desc">发布闲置物品</view>
+    </view>
+    <view class="choose-item" bindtap="goToBuy">
+      <view class="item-icon">🛒</view>
+      <view class="item-text">我要收物</view>
+      <view class="item-desc">发布求购需求</view>
+    </view>
+  </view>
+</view>
